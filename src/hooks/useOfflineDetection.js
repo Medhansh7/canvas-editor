@@ -24,7 +24,6 @@ export const useOfflineDetection = () => {
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
 
-    // Add connection type detection if supported
     if (navigator.connection) {
       navigator.connection.addEventListener("change", handleConnectionChange);
     }

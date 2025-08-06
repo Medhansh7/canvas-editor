@@ -1,4 +1,3 @@
-// src/hooks/useCanvas.js - Alternative simplified version
 import { useRef, useEffect, useState } from "react";
 import { fabric } from "fabric";
 
@@ -15,7 +14,6 @@ export const useCanvas = (canvasId) => {
 
     const tryInitialize = async () => {
       try {
-        // Wait for DOM element
         const element = document.getElementById(canvasId);
         if (!element) {
           if (retryCount < maxRetries) {
@@ -28,13 +26,11 @@ export const useCanvas = (canvasId) => {
           return;
         }
 
-        // Clean up existing canvas
         if (canvasRef.current) {
           canvasRef.current.dispose();
           canvasRef.current = null;
         }
 
-        // Get dimensions
         const container = element.parentElement;
         const width = container
           ? Math.max(container.clientWidth - 40, 600)
@@ -45,7 +41,6 @@ export const useCanvas = (canvasId) => {
 
         console.log(`Creating canvas: ${width}x${height}`);
 
-        // Create fabric canvas
         const fabricCanvas = new fabric.Canvas(canvasId, {
           width,
           height,
@@ -54,7 +49,6 @@ export const useCanvas = (canvasId) => {
           preserveObjectStacking: true,
         });
 
-        // Event listeners
         fabricCanvas.on("selection:created", (e) => {
           setSelectedObject(e.selected[0]);
         });
@@ -67,7 +61,6 @@ export const useCanvas = (canvasId) => {
           setSelectedObject(null);
         });
 
-        // Store references
         canvasRef.current = fabricCanvas;
         setCanvas(fabricCanvas);
         setIsReady(true);
@@ -83,10 +76,8 @@ export const useCanvas = (canvasId) => {
       }
     };
 
-    // Start initialization
     timeoutId = setTimeout(tryInitialize, 100);
 
-    // Cleanup
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
       if (canvasRef.current) {
