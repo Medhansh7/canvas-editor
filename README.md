@@ -2,7 +2,7 @@
 
 A real-time collaborative canvas editor built with React and Fabric.js, featuring Firebase integration for data persistence and sharing capabilities. Create, edit, and share your drawings with others through shareable URLs.
 
-![Canvas Editor Demo](https://your-canvas-editor.netlify.app)
+! https://your-canvas-editor.netlify.app
 
 ## ✨ Features
 
@@ -138,34 +138,35 @@ REACT_APP_FIREBASE_APP_ID=your-app-id
 
 canvas-editor/
 ├── public/
-│ ├── index.html
-│ └── \_redirects
+│   ├── index.html
+│   └── _redirects
 ├── src/
-│ ├── components/
-│ │ ├── Canvas/
-│ │ │ ├── CanvasEditor.jsx
-│ │ │ ├── Toolbar.jsx
-│ │ │ └── PropertiesPanel.jsx
-│ │ ├── Layout/
-│ │ │ ├── Header.jsx
-│ │ │ └── ShareModal.jsx
-│ │ └── UI/
-│ │ └── StatusIndicator.jsx
-│ ├── hooks/
-│ │ ├── useCanvas.js
-│ │ ├── useFirestore.js
-│ │ ├
-│ │ └── useScene.js
-│ ├── App.js
-│ ├── App.css
-│ ├── index.js
-│ ├── index.css
-│ └── firebase.js
-├
+│   ├── components/
+│   │   ├── Canvas/
+│   │   │   ├── CanvasEditor.jsx
+│   │   │   ├── Toolbar.jsx
+│   │   │   └── PropertiesPanel.jsx
+│   │   ├── Layout/
+│   │   │   ├── Header.jsx
+│   │   │   └── ShareModal.jsx
+│   │   └── UI/
+│   │       └── StatusIndicator.jsx
+│   ├── hooks/
+│   │   ├── useCanvas.js
+│   │   ├── useFirestore.js
+│   │   ├── useOfflineDetection.js
+│   │   └── useScene.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   ├── index.css
+│   └── firebase.js
+├── .env.example
 ├── .gitignore
-├
+├── netlify.toml
 ├── package.json
 └── README.md
+
 
 ## 🔧 Built With
 
