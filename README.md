@@ -2,7 +2,7 @@
 
 A real-time collaborative canvas editor built with React and Fabric.js, featuring Firebase integration for data persistence and sharing capabilities. Create, edit, and share your drawings with others through shareable URLs.
 
-![Canvas Editor Demo](https://your-canvas-editor.netlify.app)
+! https://your-canvas-editor.netlify.app
 
 ## ✨ Features
 
